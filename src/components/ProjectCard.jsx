@@ -3,7 +3,7 @@ import { FaReact } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiNodedotjs, SiCss3, SiFirebase, SiBootstrap, SiPhp, SiCplusplus, SiPostgresql } from 'react-icons/si';
 import { SiSteam, SiObsstudio, SiAdobe } from 'react-icons/si';
 import { IoLogoJavascript } from 'react-icons/io';
-import { RiJavaLine } from 'react-icons/ri';
+import { RiJavaLine, RiTailwindCssFill } from 'react-icons/ri';
 import { TiSocialGithub } from 'react-icons/ti';
 import { TbBrowserShare } from 'react-icons/tb';
 
@@ -25,6 +25,7 @@ const toolIcons = {
      "C++": <SiCplusplus size={16} className="text-blue-500" />,
      Java: <RiJavaLine size={16} className="text-red-600" />,
      SQL: <SiPostgresql size={16} className="text-gray-600" />,
+     Tailwind: <RiTailwindCssFill size={16} className="text-blue-600" />
 };
 
 const ProjectCard = ({ project }) => {
@@ -33,7 +34,7 @@ const ProjectCard = ({ project }) => {
      return (
           <div className="card border p-5 border-white bg-base-100 w-96 shadow-xl">
                <div className="flex gap-5">
-                    <img className="w-14" src="https://raw.githubusercontent.com/nekokaito/Pixel/refs/heads/main/public/Pixel_Logo_dark_fav.png" alt="Project Logo" />
+                    <img className="w-12 h-12 rounded-xl" src={icon} alt="Project Logo" />
                     <div className="flex flex-col gap-2">
                          <h1 className="text-2xl font-bold">{projectName}</h1>
                          <span className="text-sm font-semibold">{projectCategory}</span>

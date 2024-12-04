@@ -3,63 +3,50 @@
     "id": 1,
     "projectName": "Pixel",
     "projectCategory": "Art and Craft Shop",
-    "icon": "🌐",
-    "description": "A personal portfolio website built using the MERN stack to showcase my skills, projects, and experience.",
-    "toolsUsed": ["MongoDB", "Express.js", "React.js", "Node.js", "CSS"],
-    "githubLink": "https://github.com/yourusername/portfolio-website",
-    "liveLink": "https://yourportfolio.com"
+    "icon": "https://raw.githubusercontent.com/nekokaito/Pixel/refs/heads/main/public/Pixel_Logo_dark_fav.png",
+    "description": "A dynamic and immersive online platform dedicated to celebrating the timeless fusion of artistic expression and technological innovation.",
+    "toolsUsed": ["MongoDB", "Express.js", "React.js", "Node.js"],
+    "githubLink": "https://github.com/nekokaito/Pixel",
+    "liveLink": "https://pixelshopbd.vercel.app/"
   },
   {
     "id": 2,
     "projectName": "Refork",
     "projectCategory": "E-Commerce Shop",
-    "icon": "🛒",
+    "icon": "https://raw.githubusercontent.com/nekokaito/ReFork/refs/heads/main/public/logo.png",
     "description": "A small-sized e-commerce application featuring Firebase Authentication, JWT-based authorization, and responsive design.",
-    "toolsUsed": [
-      "MongoDB",
-      "Express.js",
-      "React.js",
-      "Node.js",
-      "Firebase",
-      "Bootstrap"
-    ],
-    "githubLink": "https://github.com/yourusername/e-commerce-app",
-    "liveLink": "https://myecommerceapp.com"
+    "toolsUsed": ["MongoDB", "Express.js", "React.js", "Firebase"],
+    "githubLink": "https://github.com/nekokaito/ReFork",
+    "liveLink": "https://refork-bd.web.app/"
   },
   {
     "id": 3,
     "projectName": "Void",
     "projectCategory": "Gadget Shop",
-    "icon": "🎮",
-    "description": "A guide to running Stardew Valley on a phone using Steam Link, showcased on my YouTube channel.",
-    "toolsUsed": ["Steam Link", "OBS Studio", "Adobe Premiere Pro"],
-    "githubLink": null,
-    "liveLink": "https://www.youtube.com/watch?v=yourvideoid"
+    "icon": "https://raw.githubusercontent.com/nekokaito/void-client/refs/heads/main/public/icon.png",
+    "description": "A Project integrates a variety of cutting-edge tech gadgets to enhance user experience and streamline development processes",
+    "toolsUsed": ["MongoDB", "Express.js", "React.js", "Firebase"],
+    "githubLink": "https://github.com/nekokaito/void-client",
+    "liveLink": "https://void-5f988.web.app/"
   },
   {
     "id": 4,
     "projectName": "Alpha Clash",
     "projectCategory": "JavaScript Game",
-    "icon": "🛠️",
-    "description": "A platform for developers to collaborate and build tools, using React and Express.",
-    "toolsUsed": [
-      "React.js",
-      "Express.js",
-      "Node.js",
-      "MongoDB",
-      "Material-UI"
-    ],
-    "githubLink": "https://github.com/yourusername/void",
-    "liveLink": "https://voidtech.com"
+    "icon": "https://raw.githubusercontent.com/nekokaito/alpha-clash/refs/heads/main/images/icon.png",
+    "description": "A thrilling JavaScript-based game that challenges players to type the alphabet as quickly and accurately as possible without the aid of visual cues. ",
+    "toolsUsed": ["JavaScript", "Tailwind"],
+    "githubLink": "https://github.com/nekokaito/alpha-clash",
+    "liveLink": "https://neko-alpha-clash.netlify.app/"
   },
   {
     "id": 5,
     "projectName": "VOVO",
     "projectCategory": "Tech Shop",
-    "icon": "🎮",
-    "description": "A guide to running Stardew Valley on a phone using Steam Link, showcased on my YouTube channel.",
-    "toolsUsed": ["Steam Link", "OBS Studio", "Adobe Premiere Pro"],
-    "githubLink": null,
-    "liveLink": "https://www.youtube.com/watch?v=yourvideoid"
+    "icon": "https://raw.githubusercontent.com/nekokaito/VOVOTech/refs/heads/main/images/logo/vovo.png",
+    "description": "An e-commerce platform specializing in the sale of computer parts and accessories. The primary goal of the project is to provide a seamless online shopping experience",
+    "toolsUsed": ["JavaScript", "PHP", "SQL"],
+    "githubLink": "https://github.com/nekokaito/VOVOTech",
+    "liveLink": null
   }
 ]
