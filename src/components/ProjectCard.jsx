@@ -21,7 +21,7 @@ const toolIcons = {
      "Adobe Premiere Pro": <SiAdobe size={16} className="text-red-600" />,
      JavaScript: <IoLogoJavascript size={16} className="text-yellow-500" />,
      PHP: <SiPhp size={16} className="text-purple-600" />,
-     C: <SiCplusplus size={16} className="text-blue-500" />, // C is similar to C++
+     C: <SiCplusplus size={16} className="text-blue-500" />,
      "C++": <SiCplusplus size={16} className="text-blue-500" />,
      Java: <RiJavaLine size={16} className="text-red-600" />,
      SQL: <SiPostgresql size={16} className="text-gray-600" />,
@@ -32,7 +32,7 @@ const ProjectCard = ({ project }) => {
      const { projectName, projectCategory, icon, description, toolsUsed, githubLink, liveLink } = project;
 
      return (
-          <div className="card border p-5 border-white bg-base-100 w-96 shadow-xl">
+          <div className="card border p-8 border-[#c4bebe36] bg-base-100 w-96 shadow-xl">
                <div className="flex gap-5">
                     <img className="w-12 h-12 rounded-xl" src={icon} alt="Project Logo" />
                     <div className="flex flex-col gap-2">
@@ -47,7 +47,7 @@ const ProjectCard = ({ project }) => {
                          <div className="flex w-20 gap-4">
                               {toolsUsed.slice(0, 4).map((tool, index) => (
                                    <div key={index} className="flex items-center text-sm">
-                                        {toolIcons[tool]} {/* Render the corresponding icon */}
+                                        {toolIcons[tool]}
                                         <span className="ml-2 text-[12px]">{tool}</span>
                                    </div>
                               ))}
@@ -62,9 +62,15 @@ const ProjectCard = ({ project }) => {
                          </a>
                     )}
 
-                    <a href={liveLink} className="text-blue-600" target="_blank" rel="noopener noreferrer">
-                         <button className='btn hover:bg-white hover:text-black'><TbBrowserShare />Live</button>
-                    </a>
+                    {
+                         liveLink && (
+                              <a href={liveLink} className="text-blue-600" target="_blank" rel="noopener noreferrer">
+                                   <button className='btn hover:bg-white hover:text-black'><TbBrowserShare />Live</button>
+                              </a>
+                         )
+                    }
+
+
                </div>
           </div>
      );
