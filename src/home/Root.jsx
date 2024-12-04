@@ -1,7 +1,6 @@
 
 import Home from "./Home";
-import Nav from "../pages/Nav";
-import { Outlet } from "react-router-dom";
+import Tabs from "../components/Tabs";
 
 
 const Root = () => {
@@ -12,15 +11,12 @@ const Root = () => {
                     <Home />
                </div>
 
-               {/* Navbar */}
-               <div id="nav-section" className="">
-                    <Nav />
-               </div>
-
                {/* Main Content */}
                <div className="container mx-auto">
 
-                    <Outlet />
+                    {/* <Outlet /> */}
+
+                    <Tabs></Tabs>
                </div>
           </div>
      );

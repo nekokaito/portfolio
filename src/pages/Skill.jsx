@@ -23,11 +23,6 @@ const Skill = () => {
 
                </div>
 
-
-
-
-
-
           </div>
      );
 };
