@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "projectName": "Pixel",
     "projectCategory": "Art and Craft Shop",
     "icon": "🌐",
@@ -9,6 +10,7 @@
     "liveLink": "https://yourportfolio.com"
   },
   {
+    "id": 2,
     "projectName": "Refork",
     "projectCategory": "E-Commerce Shop",
     "icon": "🛒",
@@ -25,6 +27,7 @@
     "liveLink": "https://myecommerceapp.com"
   },
   {
+    "id": 3,
     "projectName": "Void",
     "projectCategory": "Gadget Shop",
     "icon": "🎮",
@@ -34,6 +37,7 @@
     "liveLink": "https://www.youtube.com/watch?v=yourvideoid"
   },
   {
+    "id": 4,
     "projectName": "Alpha Clash",
     "projectCategory": "JavaScript Game",
     "icon": "🛠️",
@@ -49,6 +53,7 @@
     "liveLink": "https://voidtech.com"
   },
   {
+    "id": 5,
     "projectName": "VOVO",
     "projectCategory": "Tech Shop",
     "icon": "🎮",

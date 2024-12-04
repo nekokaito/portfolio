@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const Nav = () => {
      return (
           <div className="flex justify-center items-center">
-               <ul className="menu flex gap-2 md:gap-7 bg-base-200 lg:menu-horizontal rounded-box">
+               <ul className="menu flex gap-2 md:gap-7 bg-base-200 menu-horizontal rounded-box">
                     <li>
                          <NavLink to="/"> <CgBrowser /> <span>Projects</span></NavLink>
                     </li>
