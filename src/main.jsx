@@ -9,17 +9,29 @@ import './index.css'
 
 import Root from './home/Root';
 import Skill from './pages/Skill';
+import Projects from './pages/Projects';
+import Tools from './pages/Tools';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    children : [
+    children: [
 
       {
         path: "/",
-        element: <Skill/>
-      }
+        element: <Projects></Projects>
+      },
+      {
+        path: "/skills",
+        element: <Skill></Skill>
+      },
+      {
+        path: "/tools",
+        element: <Tools></Tools>
+      },
+
+
     ]
   },
 ]);

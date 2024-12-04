@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Home from "./Home";
-import About from "../pages/About";
+
+import Nav from "../pages/Nav";
 
 
 const Root = () => {
@@ -9,7 +10,7 @@ const Root = () => {
 
                <Home></Home>
                <div className="container mx-auto">
-                    <About></About>
+                    <Nav></Nav>
                     <Outlet></Outlet>
                </div>
 

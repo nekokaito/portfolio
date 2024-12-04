@@ -1,0 +1,60 @@
+[
+  {
+    "projectName": "Pixel",
+    "projectCategory": "Art and Craft Shop",
+    "icon": "🌐",
+    "description": "A personal portfolio website built using the MERN stack to showcase my skills, projects, and experience.",
+    "toolsUsed": ["MongoDB", "Express.js", "React.js", "Node.js", "CSS"],
+    "githubLink": "https://github.com/yourusername/portfolio-website",
+    "liveLink": "https://yourportfolio.com"
+  },
+  {
+    "projectName": "Refork",
+    "projectCategory": "E-Commerce Shop",
+    "icon": "🛒",
+    "description": "A small-sized e-commerce application featuring Firebase Authentication, JWT-based authorization, and responsive design.",
+    "toolsUsed": [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "Firebase",
+      "Bootstrap"
+    ],
+    "githubLink": "https://github.com/yourusername/e-commerce-app",
+    "liveLink": "https://myecommerceapp.com"
+  },
+  {
+    "projectName": "Void",
+    "projectCategory": "Gadget Shop",
+    "icon": "🎮",
+    "description": "A guide to running Stardew Valley on a phone using Steam Link, showcased on my YouTube channel.",
+    "toolsUsed": ["Steam Link", "OBS Studio", "Adobe Premiere Pro"],
+    "githubLink": null,
+    "liveLink": "https://www.youtube.com/watch?v=yourvideoid"
+  },
+  {
+    "projectName": "Alpha Clash",
+    "projectCategory": "JavaScript Game",
+    "icon": "🛠️",
+    "description": "A platform for developers to collaborate and build tools, using React and Express.",
+    "toolsUsed": [
+      "React.js",
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "Material-UI"
+    ],
+    "githubLink": "https://github.com/yourusername/void",
+    "liveLink": "https://voidtech.com"
+  },
+  {
+    "projectName": "VOVO",
+    "projectCategory": "Tech Shop",
+    "icon": "🎮",
+    "description": "A guide to running Stardew Valley on a phone using Steam Link, showcased on my YouTube channel.",
+    "toolsUsed": ["Steam Link", "OBS Studio", "Adobe Premiere Pro"],
+    "githubLink": null,
+    "liveLink": "https://www.youtube.com/watch?v=yourvideoid"
+  }
+]
