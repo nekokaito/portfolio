@@ -5,6 +5,7 @@ import { LuCodeXml } from "react-icons/lu";
 import { RiToolsFill } from "react-icons/ri";
 import ProjectCard from "./ProjectCard";
 import SkillCard from "./SkillCard";
+import { AnimatePresence, motion } from "motion/react";
 
 
 const Tabs = () => {
@@ -65,15 +66,10 @@ const Tabs = () => {
                <div className="flex mt-20 justify-center items-center">
 
 
+                    <AnimatePresence><motion.div key={tab} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
                          {
-
-                              // tab === skil ? skill : tab === project ? project : tab == tools ? tools
-                              //   <>      
-                              //  projects.map(project => <ProjectCard key={project.id} project={project} ></ProjectCard>)  
-                              //   </>
-
 
                               tab === 'projects' && projects.map(project => <ProjectCard key={project.id} project={project} ></ProjectCard>)
                          }
@@ -88,7 +84,8 @@ const Tabs = () => {
                          }
 
 
-                    </div>
+                    </motion.div>
+                    </AnimatePresence>
 
 
 

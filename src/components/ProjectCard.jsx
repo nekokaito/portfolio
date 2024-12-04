@@ -6,6 +6,7 @@ import { IoLogoJavascript } from 'react-icons/io';
 import { RiJavaLine, RiTailwindCssFill } from 'react-icons/ri';
 import { TiSocialGithub } from 'react-icons/ti';
 import { TbBrowserShare } from 'react-icons/tb';
+import { motion } from 'motion/react';
 
 // Tool to icon mapping
 const toolIcons = {
@@ -29,10 +30,12 @@ const toolIcons = {
 };
 
 const ProjectCard = ({ project }) => {
-     const { projectName, projectCategory, icon, description, toolsUsed, githubLink, liveLink } = project;
+     const { id, projectName, projectCategory, icon, description, toolsUsed, githubLink, liveLink } = project;
+
+
 
      return (
-          <div className="card border p-8 border-[#c4bebe36] bg-base-100 w-96 shadow-xl">
+          <motion.div  initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 * id }} className="card border p-8 border-[#c4bebe36] bg-base-100 w-96 shadow-xl">
                <div className="flex gap-5">
                     <img className="w-12 h-12 rounded-xl" src={icon} alt="Project Logo" />
                     <div className="flex flex-col gap-2">
@@ -72,7 +75,7 @@ const ProjectCard = ({ project }) => {
 
 
                </div>
-          </div>
+          </motion.div>
      );
 };
 
