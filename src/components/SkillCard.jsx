@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const SkillCard = ({ skill }) => {
      const { skill_id, skill_name, skill_logo, skill_type, skill_use_case } = skill;
 
