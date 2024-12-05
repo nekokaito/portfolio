@@ -8,7 +8,7 @@ const Projects = () => {
      const [error, setError] = useState(null);
 
      useEffect(() => {
-          // Fetch projects when the component loads
+          
           const fetchProjects = async () => {
                try {
                     const response = await axios.get('https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/project.json');
@@ -26,7 +26,7 @@ const Projects = () => {
           return <p>{error}</p>;
      }
 
-     console.log(projects)
+     
      return (
           <div className="flex mt-20 justify-center items-center">
 

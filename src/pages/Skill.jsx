@@ -12,8 +12,6 @@ const Skill = () => {
           axios.get('https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/skills.json').then(res => setSkills(res.data))
      }, [])
 
-     console.log(skills)
-
      return (
           <div>
 

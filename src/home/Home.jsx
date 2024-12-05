@@ -1,3 +1,4 @@
+import DiscordApi from "../components/DiscordApi";
 import Social from "../components/Social";
 
 
@@ -24,6 +25,9 @@ const Home = () => {
                     <div>
                          <Social></Social>
                     </div>
+
+                    <DiscordApi></DiscordApi>
+
                </div>
           </div>
      );
