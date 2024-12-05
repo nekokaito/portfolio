@@ -35,8 +35,8 @@ const ProjectCard = ({ project }) => {
 
 
      return (
-          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 * id }} className="card border p-5 border-[#c4bebe36] bg-base-100 w-96 shadow-xl">
-               <div className="flex gap-5">
+          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 * id }} className="card border p-5 border-[#9E98BC] hover:bg-[#9e98bc33] bg-base-100 w-96 shadow-xl">
+               <div className="flex gap-5 ">
                     <img className="w-12 h-12 rounded-xl" src={icon} alt="Project Logo" />
                     <div className="flex flex-col gap-2">
                          <h1 className="text-2xl font-bold">{projectName}</h1>
@@ -68,7 +68,7 @@ const ProjectCard = ({ project }) => {
                     {
                          liveLink && (
                               <a href={liveLink} className="text-blue-600" target="_blank" rel="noopener noreferrer">
-                                   <button className='btn hover:bg-white hover:text-black'><TbBrowserShare />Live</button>
+                                   <button className='btn hover:border-[#9E98BC] hover:bg-[#9E98BC] hover:text-black'><TbBrowserShare />Live</button>
                               </a>
                          )
                     }

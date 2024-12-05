@@ -10,7 +10,7 @@ const ToolsCard = ({ tool }) => {
                whileInView={{ opacity: 1, y: 0 }}
                transition={{ duration: 1, delay: 0.2 * tool_id }}
                id={tool_id}
-               className="flex gap-8 p-6 border rounded-3xl border-[#c4bebe36] mx-auto md:w-full"
+               className="flex gap-8 p-6 border rounded-3xl  border-[#9E98BC] hover:bg-[#9e98bc33] mx-auto  md:w-full  "
           >
                {/* Image Container */}
                <div className="w-24 h-24 flex-shrink-0">

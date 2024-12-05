@@ -2,6 +2,7 @@ import Home from "./Home";
 import Tabs from "../components/Tabs";
 import About from "../pages/About";
 import Email from "../pages/Email";
+import Footer from "../pages/Footer";
 
 
 
@@ -24,7 +25,8 @@ const Root = () => {
                     <Tabs />
                     <Email></Email>
                </div>
-
+              
+              <Footer></Footer>
 
           </div>
 

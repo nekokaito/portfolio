@@ -1,4 +1,5 @@
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
+import { FaRegFileLines } from "react-icons/fa6";
 import { RiGithubLine, RiTwitterXFill } from "react-icons/ri";
 import { SiDiscord } from "react-icons/si";
 
@@ -28,6 +29,11 @@ const Social = () => {
                <div className="tooltip" data-tip="Discord">
                     <a href="https://discord.gg/tW9Xcu24uc" target="_blank" rel="noopener noreferrer">
                          <SiDiscord size={30} />
+                    </a>
+               </div>
+               <div className="tooltip" data-tip="My Resume">
+                    <a href="/AbubakarSiddiq.pdf" rel="noopener noreferrer">
+                         <FaRegFileLines size={30} />
                     </a>
                </div>
           </div>

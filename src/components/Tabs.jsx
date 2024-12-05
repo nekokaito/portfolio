@@ -50,9 +50,9 @@ const Tabs = () => {
      console.log(tools)
 
      return (
-          <div>
+          <div className="">
                <div className="flex justify-center items-center">
-                    <ul className="menu flex gap-2 md:gap-7 bg-base-200 menu-horizontal rounded-box">
+                    <ul className="menu flex gap-2 md:gap-7 bg-[#9e98bc3d] menu-horizontal rounded-box">
                          <li>
                               <button onClick={() => setTab('projects')}> <CgBrowser /> Projects </button>
                          </li>
@@ -71,7 +71,7 @@ const Tabs = () => {
                     </ul>
 
                </div>
-               <div className="flex mt-20  justify-center items-center">
+               <div className="flex my-20  justify-center items-center">
 
 
                     <AnimatePresence>

@@ -19,7 +19,7 @@ const Email = () => {
                })
                .then(
                     () => {
-                         form.current.reset(); 
+                         form.current.reset();
                          toast.success('Email Successfully Sent')
                     },
                     (error) => {
@@ -29,10 +29,16 @@ const Email = () => {
                );
      };
 
+     const handleWhatsAppClick = () => {
+          const phoneNumber = "8801630844517";
+          const message = "Hello, I would like to connect with you.";
+          const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+          window.open(url, "_blank");
+     };
 
 
      return (
-          <div className="my-24">
+          <div className=" my-56">
                <h1 className="text-center text-3xl">Connect with Me</h1>
                <form className="card-body lg:w-1/2 mx-auto" ref={form} onSubmit={sendEmail}>
                     <div className="form-control">
@@ -53,7 +59,7 @@ const Email = () => {
                          <label className="label">
                               <span className="label-text">Message</span>
                          </label>
-                         <textarea className="textarea textarea-bordered" name="message" placeholder="Write Your Message"></textarea>
+                         <textarea className="textarea textarea-bordered" name="message" placeholder="Write Your Message" required></textarea>
 
                     </div>
                     <div className="form-control mt-6">
@@ -63,8 +69,8 @@ const Email = () => {
                          <p className="text-center">or</p>
                     </div>
                     <div className="form-control">
-                         <a href="https://api.whatsapp.com/send?phone=8801630844517" target="blank"><button className="btn bg-[#0F172A] border-[#9E9ABF] hover:bg-[#9E9ABF]"><FaWhatsapp />Message on Whatsapp </button></a>
-                         
+                         <button onClick={handleWhatsAppClick} className="btn bg-[#0F172A] border-[#9E9ABF] hover:bg-[#9E9ABF]"><FaWhatsapp />Message on Whatsapp </button>
+
                     </div>
                </form>
           </div>
