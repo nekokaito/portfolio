@@ -9,7 +9,7 @@ const Home = () => {
                </div>
 
                <div className="flex flex-col gap-5">
-                    <h1 className="text-2xl md:text-4xl text-center font-bold">Abubakar Siddiq Sazzad</h1>
+                    <h1 className="text-2xl md:text-4xl font-exo text-center font-bold">Abubakar Siddiq Sazzad</h1>
                     <div className="flex justify-center gap-2">
                          <p>MERN Stack Developer</p>
                          <p>.</p>

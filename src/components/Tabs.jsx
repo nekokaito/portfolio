@@ -6,6 +6,7 @@ import { RiToolsFill } from "react-icons/ri";
 import ProjectCard from "./ProjectCard";
 import SkillCard from "./SkillCard";
 import { AnimatePresence, motion } from "motion/react";
+import ToolsCard from "./ToolsCard";
 
 
 const Tabs = () => {
@@ -15,6 +16,7 @@ const Tabs = () => {
      const [projects, setProjects] = useState([]);
      const [error, setError] = useState(null);
      const [skills, setSkills] = useState([]);
+     const [tools, setTools] = useState([]);
 
      useEffect(() => {
           // Fetch projects when the component loads
@@ -37,9 +39,15 @@ const Tabs = () => {
           axios.get('https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/skills.json').then(res => setSkills(res.data))
      }, [])
 
+     useEffect(() => {
+          axios.get('https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/tools.json').then(res => setTools(res.data))
+     }, [])
+
+
      if (error) {
           return <p>{error}</p>;
      }
+     console.log(tools)
 
      return (
           <div>
@@ -73,8 +81,8 @@ const Tabs = () => {
                               animate={{ opacity: 1 }}
                               transition={{ duration: 0.3 }}
                               className={`grid ${tab === 'skills' || tab === 'tools'
-                                        ? 'grid-cols-2'
-                                        : 'grid-cols-1'
+                                   ? 'grid-cols-2'
+                                   : 'grid-cols-1'
                                    } md:grid-cols-2 lg:grid-cols-3 gap-5`}
                          >
                               {tab === 'projects' &&
@@ -87,7 +95,9 @@ const Tabs = () => {
                                         <SkillCard key={skill.id} skill={skill}></SkillCard>
                                    ))}
 
-                              {tab === 'tools' && <div>tools</div>}
+                              {tab === 'tools' && tools.map((tool) => (
+                                   <ToolsCard key={tool.id} tool={tool}></ToolsCard>
+                              ))}
                          </motion.div>
                     </AnimatePresence>
 

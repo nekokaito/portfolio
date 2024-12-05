@@ -1,9 +1,11 @@
+import { motion } from "motion/react";
+
 /* eslint-disable react/prop-types */
 const SkillCard = ({ skill }) => {
      const { skill_id, skill_name, skill_logo, skill_type, skill_use_case } = skill;
 
      return (
-          <div
+          < motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 * skill_id }}
                id={skill_id}
                className="flex gap-8 p-6 border rounded-3xl border-[#c4bebe36] mx-auto  md:w-full "
           >
@@ -29,7 +31,7 @@ const SkillCard = ({ skill }) => {
                     <h1 className="text-[9px] text-gray-500">Use case</h1>
                     <p className="text-sm">{skill_use_case}</p>
                </div>
-          </div>
+          </motion.div>
      );
 };
 
