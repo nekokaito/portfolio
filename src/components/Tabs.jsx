@@ -63,30 +63,33 @@ const Tabs = () => {
                     </ul>
 
                </div>
-               <div className="flex mt-20 justify-center items-center">
+               <div className="flex mt-20  justify-center items-center">
 
 
-                    <AnimatePresence><motion.div key={tab} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <AnimatePresence>
+                         <motion.div
+                              key={tab}
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ duration: 0.3 }}
+                              className={`grid ${tab === 'skills' || tab === 'tools'
+                                        ? 'grid-cols-2'
+                                        : 'grid-cols-1'
+                                   } md:grid-cols-2 lg:grid-cols-3 gap-5`}
+                         >
+                              {tab === 'projects' &&
+                                   projects.map((project) => (
+                                        <ProjectCard key={project.id} project={project}></ProjectCard>
+                                   ))}
 
+                              {tab === 'skills' &&
+                                   skills.map((skill) => (
+                                        <SkillCard key={skill.id} skill={skill}></SkillCard>
+                                   ))}
 
-                         {
-
-                              tab === 'projects' && projects.map(project => <ProjectCard key={project.id} project={project} ></ProjectCard>)
-                         }
-
-                         {
-
-                              tab === 'skills' && skills.map(skill => <SkillCard key={skill.id} skill={skill}></SkillCard>)
-
-                         }
-                         {
-                              tab === 'tools' && (<div>tools</div>)
-                         }
-
-
-                    </motion.div>
+                              {tab === 'tools' && <div>tools</div>}
+                         </motion.div>
                     </AnimatePresence>
-
 
 
 

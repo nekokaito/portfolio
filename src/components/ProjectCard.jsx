@@ -35,7 +35,7 @@ const ProjectCard = ({ project }) => {
 
 
      return (
-          <motion.div  initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 * id }} className="card border p-8 border-[#c4bebe36] bg-base-100 w-96 shadow-xl">
+          <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 * id }} className="card border p-5 border-[#c4bebe36] bg-base-100 w-96 shadow-xl">
                <div className="flex gap-5">
                     <img className="w-12 h-12 rounded-xl" src={icon} alt="Project Logo" />
                     <div className="flex flex-col gap-2">

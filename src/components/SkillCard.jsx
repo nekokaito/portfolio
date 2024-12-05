@@ -5,7 +5,7 @@ const SkillCard = ({ skill }) => {
      return (
           <div
                id={skill_id}
-               className="flex gap-8 p-6 border rounded-3xl border-[#c4bebe36] w-full "
+               className="flex gap-8 p-6 border rounded-3xl border-[#c4bebe36] mx-auto  md:w-full "
           >
                {/* Image Container */}
                <div className=" w-24 h-24 flex-shrink-0">
@@ -16,16 +16,16 @@ const SkillCard = ({ skill }) => {
                     />
                </div>
 
-               {/* Text Content Container */}
-               <div className="flex flex-col justify-between flex-grow">
+               {/* Text Content  Container */}
+               <div className="hidden md:flex flex-col justify-between flex-grow">
                     <div>
                          <h1 className="font-bold text-xl">{skill_name}</h1>
                          <p className="text-[9px] text-gray-500">{skill_type}</p>
                     </div>
 
-                    
+
                </div>
-               <div className="flex flex-col gap-4">
+               <div className="hidden md:flex flex-col gap-4">
                     <h1 className="text-[9px] text-gray-500">Use case</h1>
                     <p className="text-sm">{skill_use_case}</p>
                </div>
