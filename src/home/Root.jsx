@@ -1,6 +1,7 @@
 import Home from "./Home";
 import Tabs from "../components/Tabs";
 import About from "../pages/About";
+import Email from "../pages/Email";
 
 
 
@@ -12,7 +13,7 @@ const Root = () => {
                {/* Home Section */}
                <div id="home-section">
                     <Home />
-                    
+
 
                </div>
 
@@ -21,9 +22,10 @@ const Root = () => {
                     <About></About>
                     <h1 className="text-2xl md:text-3xl text-center mt-32 my-10 ">Highlights</h1>
                     <Tabs />
+                    <Email></Email>
                </div>
 
-               
+
           </div>
 
      );
