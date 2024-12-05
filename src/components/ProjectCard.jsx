@@ -12,7 +12,7 @@ import { motion } from 'motion/react';
 const toolIcons = {
      MongoDB: <SiMongodb size={12} className="text-green-600" />,
      "Express.js": <SiExpress size={16} className="text-gray-600" />,
-     React: <FaReact size={16} className="text-cyan-500" />,
+     "React.js": <FaReact size={16} className="text-cyan-500" />,
      "Node.js": <SiNodedotjs size={16} className="text-green-700" />,
      CSS: <SiCss3 size={16} className="text-blue-600" />,
      Firebase: <SiFirebase size={16} className="text-yellow-500" />,

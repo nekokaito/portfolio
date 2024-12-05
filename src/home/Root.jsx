@@ -25,8 +25,8 @@ const Root = () => {
                     <Tabs />
                     <Email></Email>
                </div>
-              
-              <Footer></Footer>
+
+               <Footer></Footer>
 
           </div>
 

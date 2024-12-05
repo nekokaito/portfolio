@@ -4,7 +4,7 @@ import Social from "../components/Social";
 
 const Home = () => {
      return (
-          <div className="flex flex-col gap-10 justify-center items-center h-screen">
+          <div className="flex flex-col mt-32 gap-10 justify-center items-center h-screen">
                <div>
                     <img className="w-56 rounded-full" src="/profile.jpeg" alt="" />
                </div>
