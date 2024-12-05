@@ -47,7 +47,7 @@ const Tabs = () => {
      if (error) {
           return <p>{error}</p>;
      }
-     console.log(tools)
+
 
      return (
           <div className="">

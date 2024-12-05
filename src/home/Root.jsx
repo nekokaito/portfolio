@@ -8,6 +8,14 @@ import Footer from "../pages/Footer";
 
 
 const Root = () => {
+
+     console.log(
+          "%c Hey there! 👋\n" +
+          "I built this in just ONE day, so please don't judge me too harshly. 😅\n" +
+          "Hope you like it! ❤️",
+          "color: white; background-color: #1e90ff; font-size: 12px; font-weight: bold; padding: 1px; border-radius: 5px;"
+     );
+
      return (
           <div className="font-ubuntu relative">
 
