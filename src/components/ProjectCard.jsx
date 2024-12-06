@@ -8,7 +8,7 @@ import { TiSocialGithub } from 'react-icons/ti';
 import { TbBrowserShare } from 'react-icons/tb';
 import { motion } from 'motion/react';
 
-// Tool to icon mapping
+
 const toolIcons = {
      MongoDB: <SiMongodb size={12} className="text-green-600" />,
      "Express.js": <SiExpress size={16} className="text-gray-600" />,

@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter'
 const About = () => {
      return (
           <div data-aos="fade-right" className="md:w-1/2 mx-auto p-7 my-10 md:my-32">
-               <h1 className=" flex gap-2 text-2xl font-exo text-center md:text-left my-5 md:text-3xl"> <TbInfoHexagonFilled className="mr-2 pt-2" /> About  <Typewriter
+               <h1 className=" flex gap-2 text-2xl font-exo text-center md:text-left my-5 md:text-4xl"> <TbInfoHexagonFilled className="mr-2 pt-2" /> About  <Typewriter
                     words={['Me', 'My Self']}
                     loop={10}
                     cursor

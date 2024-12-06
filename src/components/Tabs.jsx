@@ -1,56 +1,62 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { CgBrowser } from "react-icons/cg";
 import { LuCodeXml } from "react-icons/lu";
 import { RiToolsFill } from "react-icons/ri";
 import ProjectCard from "./ProjectCard";
 import SkillCard from "./SkillCard";
-import { AnimatePresence, motion } from "motion/react";
 import ToolsCard from "./ToolsCard";
+import { AnimatePresence, motion } from "motion/react";
 
 import playClick from "../hook/playClick";
+import axios from "axios";
+import Loading from "./Loading";
 
 const Tabs = () => {
      const [tab, setTab] = useState("projects");
-     const [projects, setProjects] = useState([]);
+     const [data, setData] = useState({
+          projects: [],
+          skills: [],
+          tools: [],
+     });
      const [error, setError] = useState(null);
-     const [skills, setSkills] = useState([]);
-     const [tools, setTools] = useState([]);
+     const [loading, setLoading] = useState(true);
+
+     const fetchData = async () => {
+          try {
+               const [projectsRes, skillsRes, toolsRes] = await Promise.all([
+                    axios.get("https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/project.json"),
+                    axios.get("https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/skills.json"),
+                    axios.get("https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/tools.json")
+               ]);
+
+               setData({
+                    projects: projectsRes.data,
+                    skills: skillsRes.data,
+                    tools: toolsRes.data
+               });
+          } catch (err) {
+               setError("Failed to load data. Please try again later.");
+               console.error(err);
+          } finally {
+               setLoading(false);
+          }
+     };
 
      useEffect(() => {
-          const fetchProjects = async () => {
-               try {
-                    const response = await axios.get(
-                         "https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/project.json"
-                    );
-                    setProjects(response.data);
-               } catch (err) {
-                    setError("Failed to load projects. Please try again later.");
-                    console.error(err);
-               }
-          };
-          fetchProjects();
-     }, []);
-
-     useEffect(() => {
-          axios
-               .get("https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/skills.json")
-               .then((res) => setSkills(res.data));
-     }, []);
-
-     useEffect(() => {
-          axios
-               .get("https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/tools.json")
-               .then((res) => setTools(res.data));
+          fetchData();
      }, []);
 
      const handleTabClick = (tabName) => {
-          playClick(); // Play the click sound
-          setTab(tabName); // Set the active tab
+          playClick();
+          setTab(tabName);
      };
 
+     if (loading) {
+          return <Loading></Loading>;
+     }
+
      if (error) {
-          return <p>{error}</p>;
+          return <p className="text-3xl text-center my-10">{error}</p>;
      }
 
      return (
@@ -58,21 +64,16 @@ const Tabs = () => {
                <h1 className="text-2xl md:text-4xl text-center mt-32 my-10 ">Highlights</h1>
                <div className="flex justify-center items-center">
                     <ul className="menu flex gap-2 md:gap-7 bg-[#9e98bc3d] menu-horizontal rounded-box">
-                         <li>
-                              <button onClick={() => handleTabClick("projects")}>
-                                   <CgBrowser /> Projects
-                              </button>
-                         </li>
-                         <li>
-                              <button onClick={() => handleTabClick("skills")}>
-                                   <LuCodeXml /> Skills
-                              </button>
-                         </li>
-                         <li>
-                              <button onClick={() => handleTabClick("tools")}>
-                                   <RiToolsFill /> Tools
-                              </button>
-                         </li>
+                         {["projects", "skills", "tools"].map((item) => (
+                              <li key={item}>
+                                   <button onClick={() => handleTabClick(item)}>
+                                        {item === "projects" && <CgBrowser />}
+                                        {item === "skills" && <LuCodeXml />}
+                                        {item === "tools" && <RiToolsFill />}
+                                        {item.charAt(0).toUpperCase() + item.slice(1)}
+                                   </button>
+                              </li>
+                         ))}
                     </ul>
                </div>
                <div className="flex my-20 justify-center items-center">
@@ -82,23 +83,14 @@ const Tabs = () => {
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
                               transition={{ duration: 0.3 }}
-                              className={`grid ${tab === "skills" || tab === "tools"
-                                        ? "grid-cols-2"
-                                        : "grid-cols-1"
-                                   } md:grid-cols-2 lg:grid-cols-3 gap-5`}
+                              className={`grid ${tab === "skills" || tab === "tools" ? "grid-cols-2" : "grid-cols-1"} md:grid-cols-2 lg:grid-cols-3 gap-5`}
                          >
                               {tab === "projects" &&
-                                   projects.map((project) => (
-                                        <ProjectCard key={project.id} project={project}></ProjectCard>
-                                   ))}
+                                   data.projects.map((project) => <ProjectCard key={project.id} project={project} />)}
                               {tab === "skills" &&
-                                   skills.map((skill) => (
-                                        <SkillCard key={skill.id} skill={skill}></SkillCard>
-                                   ))}
+                                   data.skills.map((skill) => <SkillCard key={skill.id} skill={skill} />)}
                               {tab === "tools" &&
-                                   tools.map((tool) => (
-                                        <ToolsCard key={tool.id} tool={tool}></ToolsCard>
-                                   ))}
+                                   data.tools.map((tool) => <ToolsCard key={tool.id} tool={tool} />)}
                          </motion.div>
                     </AnimatePresence>
                </div>
