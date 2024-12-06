@@ -4,7 +4,8 @@ import Social from "../components/Social";
 
 const Home = () => {
      return (
-          <div className="flex flex-col mt-32 gap-10 justify-center items-center h-screen">
+          <div data-aos="fade-up"
+               data-aos-anchor-placement="top-center" className="flex flex-col mt-32 gap-10 justify-center items-center h-screen">
                <div>
                     <img className="w-56 rounded-full" src="/profile.jpeg" alt="" />
                </div>

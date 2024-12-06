@@ -13,7 +13,6 @@
     "@emailjs/browser": "^4.4.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.7.1",
-    "aos": "^2.3.4",
     "axios": "^1.7.8",
     "daisyui": "^4.12.14",
     "devicons": "^1.8.0",

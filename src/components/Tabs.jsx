@@ -50,7 +50,8 @@ const Tabs = () => {
 
 
      return (
-          <div className="">
+          <div data-aos="fade-up-right" className="">
+               <h1 className="text-2xl md:text-4xl text-center mt-32 my-10 ">Highlights</h1>
                <div className="flex justify-center items-center">
                     <ul className="menu flex gap-2 md:gap-7 bg-[#9e98bc3d] menu-horizontal rounded-box">
                          <li>

@@ -38,7 +38,7 @@ const Email = () => {
 
 
      return (
-          <div className=" my-56">
+          <div data-aos="flip-up" className=" my-56">
                <h1 className="text-center text-3xl">Connect with Me</h1>
                <form className="card-body lg:w-1/2 mx-auto" ref={form} onSubmit={sendEmail}>
                     <div className="form-control">

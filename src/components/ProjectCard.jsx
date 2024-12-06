@@ -60,14 +60,14 @@ const ProjectCard = ({ project }) => {
                </div>
                <div className="mt-10 flex justify-end gap-2">
                     {githubLink && (
-                         <a href={githubLink} className="text-blue-600" target="_blank" rel="noopener noreferrer">
+                         <a href={githubLink} className="" target="_blank" rel="noopener noreferrer">
                               <button className='btn hover:bg-white hover:text-black '><TiSocialGithub />Repo</button>
                          </a>
                     )}
 
                     {
                          liveLink && (
-                              <a href={liveLink} className="text-blue-600" target="_blank" rel="noopener noreferrer">
+                              <a href={liveLink} className="" target="_blank" rel="noopener noreferrer">
                                    <button className='btn hover:border-[#9E98BC] hover:bg-[#9E98BC] hover:text-black'><TbBrowserShare />Live</button>
                               </a>
                          )
