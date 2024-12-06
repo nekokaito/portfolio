@@ -8,46 +8,50 @@ import SkillCard from "./SkillCard";
 import { AnimatePresence, motion } from "motion/react";
 import ToolsCard from "./ToolsCard";
 
+import playClick from "../hook/playClick";
 
 const Tabs = () => {
-
-     const [tab, setTab] = useState('projects');
-
+     const [tab, setTab] = useState("projects");
      const [projects, setProjects] = useState([]);
      const [error, setError] = useState(null);
      const [skills, setSkills] = useState([]);
      const [tools, setTools] = useState([]);
 
      useEffect(() => {
-          // Fetch projects when the component loads
           const fetchProjects = async () => {
                try {
-                    const response = await axios.get('https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/project.json');
+                    const response = await axios.get(
+                         "https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/project.json"
+                    );
                     setProjects(response.data);
                } catch (err) {
-                    setError('Failed to load projects. Please try again later.');
+                    setError("Failed to load projects. Please try again later.");
                     console.error(err);
                }
           };
-
           fetchProjects();
      }, []);
 
-
+     useEffect(() => {
+          axios
+               .get("https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/skills.json")
+               .then((res) => setSkills(res.data));
+     }, []);
 
      useEffect(() => {
-          axios.get('https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/skills.json').then(res => setSkills(res.data))
-     }, [])
+          axios
+               .get("https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/tools.json")
+               .then((res) => setTools(res.data));
+     }, []);
 
-     useEffect(() => {
-          axios.get('https://raw.githubusercontent.com/nekokaito/json-data/refs/heads/main/tools.json').then(res => setTools(res.data))
-     }, [])
-
+     const handleTabClick = (tabName) => {
+          playClick(); // Play the click sound
+          setTab(tabName); // Set the active tab
+     };
 
      if (error) {
           return <p>{error}</p>;
      }
-
 
      return (
           <div data-aos="fade-up-right" className="">
@@ -55,58 +59,48 @@ const Tabs = () => {
                <div className="flex justify-center items-center">
                     <ul className="menu flex gap-2 md:gap-7 bg-[#9e98bc3d] menu-horizontal rounded-box">
                          <li>
-                              <button onClick={() => setTab('projects')}> <CgBrowser /> Projects </button>
+                              <button onClick={() => handleTabClick("projects")}>
+                                   <CgBrowser /> Projects
+                              </button>
                          </li>
-
                          <li>
-                              <button onClick={() => setTab('skills')}>
+                              <button onClick={() => handleTabClick("skills")}>
                                    <LuCodeXml /> Skills
                               </button>
                          </li>
-
                          <li>
-                              <button onClick={() => setTab('tools')}>
-                                   <RiToolsFill />Tools
+                              <button onClick={() => handleTabClick("tools")}>
+                                   <RiToolsFill /> Tools
                               </button>
                          </li>
                     </ul>
-
                </div>
-               <div className="flex my-20  justify-center items-center">
-
-
+               <div className="flex my-20 justify-center items-center">
                     <AnimatePresence>
                          <motion.div
                               key={tab}
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
                               transition={{ duration: 0.3 }}
-                              className={`grid ${tab === 'skills' || tab === 'tools'
-                                   ? 'grid-cols-2'
-                                   : 'grid-cols-1'
+                              className={`grid ${tab === "skills" || tab === "tools"
+                                        ? "grid-cols-2"
+                                        : "grid-cols-1"
                                    } md:grid-cols-2 lg:grid-cols-3 gap-5`}
                          >
-                              {tab === 'projects' &&
+                              {tab === "projects" &&
                                    projects.map((project) => (
                                         <ProjectCard key={project.id} project={project}></ProjectCard>
                                    ))}
-
-                              {tab === 'skills' &&
+                              {tab === "skills" &&
                                    skills.map((skill) => (
                                         <SkillCard key={skill.id} skill={skill}></SkillCard>
                                    ))}
-
-                              {tab === 'tools' && tools.map((tool) => (
-                                   <ToolsCard key={tool.id} tool={tool}></ToolsCard>
-                              ))}
+                              {tab === "tools" &&
+                                   tools.map((tool) => (
+                                        <ToolsCard key={tool.id} tool={tool}></ToolsCard>
+                                   ))}
                          </motion.div>
                     </AnimatePresence>
-
-
-
-
-
-
                </div>
           </div>
      );

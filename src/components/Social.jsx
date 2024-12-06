@@ -32,7 +32,7 @@ const Social = () => {
                     </a>
                </div>
                <div className="tooltip" data-tip="My Resume">
-                    <a href="/AbubakarSiddiq.pdf" rel="noopener noreferrer">
+                    <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
                          <FaRegFileLines size={30} />
                     </a>
                </div>

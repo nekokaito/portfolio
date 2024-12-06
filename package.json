@@ -27,6 +27,7 @@
     "react-icons": "^5.4.0",
     "react-router-dom": "^7.0.2",
     "react-router-scroll": "^0.4.4",
+    "react-simple-typewriter": "^5.0.1",
     "react-tsparticles": "^2.12.2",
     "sort-by": "^1.2.0"
   },
